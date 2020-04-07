@@ -19,12 +19,17 @@ def main():
     comment = sys.argv[1]
     ## the (optional) language, or nothing
     lang = sys.argv[2] if len(sys.argv) > 2 else ""
+    ## the (optional) ignore symbol, or nothing
+    ignore = sys.argv[3] if len(sys.argv) > 3 else None
     block = None
     ## shameless plug
     print("<!-- auto-generated using https://github.com/apocalypse-book/reverse-md.git -->")
     for line in sys.stdin.readlines():
+        ## ignore all lines that start with the `ignore` symbol
+        if ignore is not None and line.lstrip().startswith(ignore):
+            pass
         ## we wanna skip leading spaces, like on this line <<<
-        if line.lstrip().startswith(comment):
+        elif line.lstrip().startswith(comment):
             ## if we have a non-empty block saved, print it and set it to None
             ## again
             if block is not None and len(block) > 0 and not block.isspace():

@@ -13,7 +13,11 @@
 /// README.md file.  You can replace the `///` with a different comment symbol,
 /// or you can replace the (optional) `c` with a different language. For
 /// example, to create an annotated python file with md behind a ## comment, run
-/// `./reverse-md.py ## python <reverse-md.py >reverse-md.md`
+/// `./reverse-md.py '##' python <reverse-md.py >reverse-md.md`
+///
+/// To add an optional symbol that causes a whole line to be ignored, add a 3rd
+/// parameter to the command line invocation, like this:
+/// `./reverse-md.py '##' python '#!' <reverse-md.py >reverse-md.md`
 ///
 /// ## reverse-md demo
 ///
