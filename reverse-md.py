@@ -51,7 +51,7 @@ def main():
             ## spaces, skip it
             if len(block) == 0 and (len(line) == 0 or line.isspace()):
                 continue
-            # else we add the line to the code block and append a newline
+            ## else we add the line to the code block and append a newline
             block += line
             block += "\n"
 
