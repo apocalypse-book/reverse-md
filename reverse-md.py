@@ -54,6 +54,11 @@ def main():
             ## else we add the line to the code block and append a newline
             block += line
             block += "\n"
+    ## if we have a non-empty block near the end, print it
+    if block is not None and len(block) > 0 and not block.isspace():
+        print(f"```{lang}")
+        print(block.rstrip())
+        print("```")
 
 if __name__ == "__main__":
     main()
